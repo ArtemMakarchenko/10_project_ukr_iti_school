@@ -41,6 +41,7 @@ const loadform = async () => {
   	  reader.onload = function(event) {
   	  	picture.src = reader.result
   	  }
+  	  reader.readAsDataURL(event.target.files[0])
   	}
   }
 }
