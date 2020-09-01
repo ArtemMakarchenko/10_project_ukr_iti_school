@@ -3,7 +3,7 @@ const loadform = async () => {
 	document.body
 	  .appendChild(document.createElement('main'))
 	    .innerHTML = html
-  const [login, password, avatar, submit] = ['login', 'password', 'avatar', 'submit'].map((id) => document.getElementById(id))
+  const [login, password, avatar, submit, picture] = ['login', 'password', 'avatar', 'submit', 'picture'].map((id) => document.getElementById(id))
   login.onchange = function(event) {
   	fetch(`http://localhost:3000/users?login=${event.target.value}`)
   	  .then((response) => response.json())
@@ -28,9 +28,20 @@ const loadform = async () => {
   		},
         body: JSON.stringify({
         	login: login.value,
-        	password: password.value
+        	password: password.value,
+        	avatar: picture.src
         })
   	}).then((response) => console.log(response.status))
+  }
+  avatar.onchange = function(event) {
+  	if (event.target.files[0].type.indexOf('image') !== 0) {
+  	  console.warn('Invalid file type')
+  	} else {
+  	  const reader = new FileReader
+  	  reader.onload = function(event) {
+  	  	picture.src = reader.result
+  	  }
+  	}
   }
 }
 loadform()
