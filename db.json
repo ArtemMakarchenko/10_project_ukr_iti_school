@@ -1,0 +1,13 @@
+{
+  "users": {
+    "begemot": {
+      "name": "Frodo",
+      "hobby": "eat"
+    }
+  },
+  "templates": {
+    "login": "\n  <section>\n    <div>\n      <h1>Hi!</h1>\n      <input type=\"text\"/>\n    </div>\n  </section>\n",
+    "page": "\n  <div>\n    <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png\">\n    <p>Hello world</p>\n  </div>\n",
+    "fun": "\n  <style>\n    .container {\n      padding: 32px 48px;\n      border: 1px solid green;\n      background: #ccc;\n      position: absolute;\n      top: 20%;\n      bottom: 20%;\n      left: 20%;\n      right: 20%\n    }\n  </style>\n  <div class=\"container\">\n    <input type=\"color\"/>\n    <input type=\"date\"/>\n  </div>\n"
+  }
+}

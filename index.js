@@ -1,5 +1,6 @@
 const loadform = async () => {
-	const html = await (await fetch('https://alina-osyka.github.io/test/resources/signup.html')).text()
+	const html = await (await fetch('https://artemmakarchenko.github.io/10_project_ukr_iti_school/resources/signup.html')).text()
+
 	document.body
 		.appendChild(document.createElement('main'))
 		.innerHTML = html
@@ -22,7 +23,7 @@ const loadform = async () => {
 	}
 
 	password.onchange = function (event) {
-		if (event.target.length >= 8 && event.target.match(/[\dA-Z])+/g)) {
+		if (event.target.value.length >= 8 && event.target.match(/[\dA-Z])+/g)) {
 			avatar.disabled = false
 			submit.disabled = false
 			const hash = Sha256.hash(event.target.value)
